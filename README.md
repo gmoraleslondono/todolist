@@ -9,10 +9,14 @@ The data is saved locally, the user could access the tasks list when open the ap
 
 ## Summary
 
-It should display a list of Tasks.
-It should add Tasks.
-It should delete Tasks.
-It should mark Tasks as Done.
+* It should display a list of Tasks.
+* It should add Tasks.
+* It should delete Tasks.
+* It should mark Tasks as Done.
+
+## ScreenShot
+
+![Todo list](/images/todolist.png)
 
 ## Credits
 

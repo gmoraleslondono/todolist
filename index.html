@@ -1,3 +1,10 @@
+<!-- 
+It should display a list of Tasks.
+It should add Tasks.
+It should delete Tasks.
+It should mark Tasks as Done.
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,14 +19,17 @@
             <main>
                 <h1>{{ title.toUpperCase() }}</h1>
                 <div class="addItemForm">
-                    <input v-model="newItem" type="text" placeholder="Write new item" @keyup.enter="saveItem"></input>
-                    <button class="btn" @click="saveItem">Add</button>
+                    <input class="border" v-model="newItem" type="text" placeholder="Add item" @keyup.enter="addItem"></input>
+                    <button class="btn" @click="addItem">Add</button>
                 </div>
-                <ol class="list">
-                    <li v-for= "item in list">
-                        {{ item }}
+                <ul>
+                    <li v-for= "(item, index) in list">
+                        <input type="checkbox" @click="check(item)" v-bind:checked="item.done">
+                        <del v-if="item.done">{{ item.text }}</del>
+                        <span v-else>{{ item.text }}</span>
+                        <button class="btn delete" @click="removeItem(index)">x</button>
                     </li>
-                </ol>
+                </ul>
             </main>
         </div>
 
@@ -29,18 +39,36 @@
                 data: {
                     title: "Todo List",
                     newItem: "",
-                    list : [
-                        "learn HTML",
-                        "Learn CSS",
-                        "Learn JavaScript"
+                    list : [ 
+                        // { text: 'learn HTML', done: false },
                     ]
                 },
                 methods: {
-                     saveItem() {
-                        this.list.push(this.newItem);
-                        this.newItem = "";
+                    addItem() {
+                        if(this.newItem !== "") {
+                            this.list.push({text: this.newItem, done: false})
+                            this.newItem = ""
+                            this.saveData()
+                        }
+                    },
+                    removeItem(index){
+                        this.list.splice(index,1);
+                        this.saveData()
+                    },
+                    check(item){
+                        item.done = !item.done
+                        this.saveData()
+                    },
+                    saveData () {
+                        localStorage.setItem("list", JSON.stringify(this.list))
                     }
-                }
+                },
+                mounted() {
+                    const list = localStorage.getItem("list")
+                    if (list) {
+                        this.list = JSON.parse(list);
+                    }
+                },
             });
         </script>
     </body>

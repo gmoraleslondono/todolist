@@ -1,94 +1,105 @@
-@import url(https://fonts.googleapis.com/css?family=Bevan);
-@import url(https://fonts.googleapis.com/css?family=Titan+One);
-
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    font-family: "Bevan";
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 body {
-    background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+  background: #eb9fef; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fecee9,
+    #eb9fef
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fecee9,
+    #eb9fef
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #app {
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 10%;
-    border: 2px solid black;
-    background: white; 
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px black;
+  min-height: 50vh;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 10%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  min-width: 300px;
 }
 
 main {
-    width: 80%;
-    margin: 0 auto;
-    padding: 10%;
+  padding: 5%;
 }
 
 main h1 {
-    /* WebKit (Safari/Chrome) Only */
-  /* -webkit-text-stroke: 1px black;
-  
-  color: white;
-  font-size: 35px;
-  font-family: "Bevan";
+  color: #eb9fef;
   text-align: center;
-  text-shadow:
-    3px 3px 0 #000,
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-   -1px  1px 0 #000,
-    1px  1px 0 #000; */
-
-    color: rebeccapurple;
-    text-align: center;
-    font-size: 50px;
-	font-family:'Titan One',cursive;
-	font-weight:700;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 main .addItemForm {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    margin: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
-main .addItemForm input{
-    flex-grow: 2;
-    margin: 5px 10px;
-    border-radius: 10px;
-    padding: 10px;
+main .addItemForm input {
+  flex-grow: 2;
+  margin: 5px;
+  border-radius: 50px;
+  padding: 10px;
+  border: 2px solid #eb9fef;
 }
 
-main .addItemForm input:focus{
-    outline: none;
+main .addItemForm input:focus {
+  outline: none;
 }
 
-main .addItemForm .btn{
-    flex-grow: 1;
-    margin: 5px;
-    border-radius: 10px;
-    background-color: #8E2DE2;
-    color: white;
-    padding: 10px;
+.btn {
+  flex-grow: 1;
+  margin: 5px;
+  border-radius: 50px;
+  border: 2px solid #eb9fef;
+  background-color: white;
+  color: #eb9fef;
+  padding: 10px;
 }
 
-main .addItemForm .btn:focus{
-    outline: none;
+.btn:focus {
+  outline: none;
 }
 
-main .addItemForm .btn:hover{
-    background-color: #4A00E0;
+.btn:hover {
+  cursor: pointer;
 }
 
-main .list {
-    padding: 0 10%;
+.delete {
+  font-size: 16px;
+  padding: 0 3%;
 }
 
+main .addItemForm .btn:hover {
+  background-color: #eb9fef;
+  color: white;
+}
+
+main ul {
+  list-style: none;
+  padding: 0 5%;
+}
+
+@media screen and (max-width: 450px) {
+    #app{
+        box-shadow: none;
+    }
+
+    main .addItemForm {
+        flex-direction: column;
+    }
+}

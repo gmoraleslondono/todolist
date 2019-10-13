@@ -20,7 +20,7 @@ The data is saved locally, the user could access the tasks list when open the ap
 * CSS
 * JavaScript
 * Vue.js
-* LocalStorage
+* Window.localStorage (localStorage)
 
 ## ScreenShot
 

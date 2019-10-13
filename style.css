@@ -79,11 +79,6 @@ main .addItemForm input:focus {
   cursor: pointer;
 }
 
-.delete {
-  font-size: 16px;
-  padding: 0 3%;
-}
-
 main .addItemForm .btn:hover {
   background-color: #eb9fef;
   color: white;
@@ -91,7 +86,34 @@ main .addItemForm .btn:hover {
 
 main ul {
   list-style: none;
-  padding: 0 5%;
+  padding: 0;
+}
+
+main ul li {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+main ul li input{
+  width: 6%;
+  left: 0;
+}
+
+main ul li .delete{
+  height: 22px;
+  float: right;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.containerItem {
+  width: 80%; 
+  word-wrap: break-word;
+  margin: 0 5px;
 }
 
 @media screen and (max-width: 450px) {

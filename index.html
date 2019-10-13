@@ -39,10 +39,8 @@ It should mark Tasks as Done.
                 data: {
                     title: "Todo List",
                     newItem: "",
-                    list : [
-                        "learn HTML",
-                        "Learn CSS",
-                        "Learn JavaScript"
+                    list : [ 
+                        // { text: 'learn HTML', done: false },
                     ]
                 },
                 methods: {
@@ -69,7 +67,7 @@ It should mark Tasks as Done.
                     const list = localStorage.getItem("list")
                     if (list) {
                         this.list = JSON.parse(list);
-                }
+                    }
                 },
             });
         </script>

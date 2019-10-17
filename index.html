@@ -47,7 +47,8 @@ It should mark Tasks as Done.
                 },
                 methods: {
                     addItem() {
-                        if(this.newItem !== "") {
+                        const textValid = this.newItem.trim();
+                        if(textValid !== "") {
                             this.list.push({text: this.newItem, done: false})
                             this.newItem = ""
                             this.saveData()
